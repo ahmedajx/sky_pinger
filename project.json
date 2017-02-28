@@ -1,0 +1,8 @@
+{
+  "name": "skysports",
+  "description": "",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::212733762802:role/skysports_lambda_function",
+  "environment": {}
+}
