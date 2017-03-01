@@ -15,6 +15,6 @@ aws events put-rule --schedule-expression 'cron(0 12 * * ? *)' --name daily_at_n
 ```
 
 ```
-aws events put-targets --rule daily_at_noon --targets file://levels.json
+aws events put-targets --rule daily_at_noon --targets file://levelsio.json
 ```
 
