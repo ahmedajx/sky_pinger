@@ -7,7 +7,7 @@ apex deploy --env-file env.json
 ## How to schedule lambda functions using cloud watch events
 
 ```
-aws lambda add-permission --function-name skysports_sender --statement-id skysports_sender01 --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn arn:aws:lambda:eu-west-1:212733762802:rule/daily_at_noon
+aws lambda add-permission --function-name skysports_sender --statement-id skysports_sender01 --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn arn:aws:events:eu-west-1:212733762802:rule/daily_at_noon
 ```
 
 ```
