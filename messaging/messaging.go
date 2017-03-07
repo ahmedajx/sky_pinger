@@ -13,8 +13,8 @@ import (
 var ev = env.Load()
 
 var (
-	ACCOUNTSID = ev.AuthToken
-	AUTHTOKEN  = ev.AccountSid
+	ACCOUNTSID = ev.AccountSid
+	AUTHTOKEN  = ev.AuthToken
 	FROM       = ev.From
 	TO         = ev.To
 )
