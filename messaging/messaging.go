@@ -49,7 +49,7 @@ func SendText(heading string) (bool, string) {
 	if errorMessage.Message == "" {
 		return true, ""
 	}
-	return false, errorMessage.Message
+	return false, errorMessage.Message + ACCOUNTSID, AUTHTOKEN + FROM + TO
 }
 
 func basicAuth(username, password string) string {
