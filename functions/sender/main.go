@@ -14,11 +14,12 @@ type Message struct {
 func main() {
 	apex.HandleFunc(func(event json.RawMessage, ctx *apex.Context) (interface{}, error) {
 		heading := sky.LatestChelseaNews()
-		message := Message{"Successfully sent."}
-		b, _ := json.Marshal(message)
-		if response := messaging.SendText(heading); response {
-			return string(b), nil
+		response, output := messaging.SendText(heading)
+		if response {
+			return nil, nil
 		}
-		return nil, nil
+		message := Message{output}
+		b, _ := json.Marshal(message)
+		return string(b), nil
 	})
 }

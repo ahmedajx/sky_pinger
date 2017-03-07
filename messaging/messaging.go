@@ -26,7 +26,7 @@ type ErrorMessage struct {
 	Status   int    `json:"status"`
 }
 
-func SendText(heading string) bool {
+func SendText(heading string) (bool, string) {
 	client := &http.Client{}
 	v := url.Values{}
 	v.Set("From", FROM)
@@ -47,9 +47,9 @@ func SendText(heading string) bool {
 	var errorMessage ErrorMessage
 	json.Unmarshal(body, &errorMessage)
 	if errorMessage.Message == "" {
-		return true
+		return true, ""
 	}
-	return false
+	return false, errorMessage.Message
 }
 
 func basicAuth(username, password string) string {
