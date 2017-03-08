@@ -32,10 +32,10 @@ func SendText(heading string) (bool, string) {
 	v.Set("From", FROM)
 	v.Add("To", TO)
 	v.Add("Body", heading)
-
+	endpoint := "https://api.twilio.com/2010-04-01/Accounts/" + ACCOUNTSID + "/Messages.json"
 	request, _ := http.NewRequest(
 		"POST",
-		"https://api.twilio.com/2010-04-01/Accounts/AC0dffb22f9c25820d4fb6a6460987bea7/Messages.json",
+		endpoint,
 		bytes.NewBufferString(v.Encode()),
 	)
 
